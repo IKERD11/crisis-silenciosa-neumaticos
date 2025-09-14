@@ -1,0 +1,50 @@
+{
+  "name": "reutilizacion-llantas-itc",
+  "version": "1.0.0",
+  "description": "Sitio web sobre reutilización de llantas - Instituto Tecnológico de Cuautla",
+  "main": "index.html",
+  "scripts": {
+    "start": "python app.py",
+    "dev": "python app.py",
+    "serve": "npx serve .",
+    "flask": "python app.py",
+    "python-server": ".venv/Scripts/python.exe app.py",
+    "build": "echo 'No build process needed for static site'",
+    "deploy": "gh-pages -d .",
+    "lint": "npx htmlhint index.html",
+    "format": "npx prettier --write *.html *.css *.js",
+    "validate": "npx html-validate index.html"
+  },
+  "keywords": [
+    "reutilización",
+    "llantas",
+    "sustentabilidad",
+    "medio-ambiente",
+    "instituto-tecnologico",
+    "cuautla",
+    "reciclaje",
+    "investigación"
+  ],
+  "author": "Instituto Tecnológico de Cuautla",
+  "license": "MIT",
+  "homepage": "https://github.com/tu-usuario/reutilizacion-llantas-itc#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tu-usuario/reutilizacion-llantas-itc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tu-usuario/reutilizacion-llantas-itc/issues"
+  },
+  "devDependencies": {
+    "serve": "^14.2.1",
+    "gh-pages": "^6.1.0",
+    "htmlhint": "^1.1.4",
+    "prettier": "^3.1.0",
+    "html-validate": "^8.7.4"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

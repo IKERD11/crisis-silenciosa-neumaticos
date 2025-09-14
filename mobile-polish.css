@@ -1,0 +1,39 @@
+/* Mobile Polish - Pulidos finales para móviles */
+.mobile-optimized {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .hero {
+        min-height: 100vh;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+    
+    .card {
+        margin-bottom: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+}
