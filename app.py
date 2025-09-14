@@ -141,13 +141,18 @@ if __name__ == '__main__':
     print("   • /api/info      - Información del proyecto")
     print("\n⏹️  Presiona Ctrl+C para detener el servidor")
     print("=" * 60)
+
+if __name__ == '__main__':
+    # Configuración para desarrollo y producción
+    port = int(os.environ.get('PORT', 5000))
+    debug_mode = os.environ.get('FLASK_ENV') != 'production'
     
     # Iniciar servidor
     try:
         app.run(
             host='0.0.0.0',
-            port=5000,
-            debug=True,
+            port=port,
+            debug=debug_mode,
             threaded=True
         )
     except KeyboardInterrupt:
