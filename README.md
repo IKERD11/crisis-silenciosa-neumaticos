@@ -17,8 +17,8 @@ Sitio web moderno y responsive sobre la problemática de los neumáticos usados 
 
 ```
 ├── 📄 index.html          # Página principal (nueva versión)
-├── 🎨 styles.css          # Estilos CSS modernos
-├── ⚡ script.js           # JavaScript funcional
+├── 🎨 styles.css          # Estilos principales y responsivos
+├── ⚡ responsive-mobile.js # Comportamiento del menú y mejoras móviles
 ├── 🐍 app.py             # Servidor Flask optimizado
 ├── 📁 assets/            # Recursos estáticos
 │   └── images/           # Imágenes y logos
@@ -107,4 +107,4 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ---
 
-✨ **Versión renovada - Septiembre 2025** ✨
+✨ **Versión renovada - Octubre 2025** ✨
