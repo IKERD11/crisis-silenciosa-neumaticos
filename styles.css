@@ -473,14 +473,16 @@ body::after {
     background: transparent;
     border: none;
     padding: 0;
+    z-index: 1001; /* Asegurar que esté sobre otros elementos */
 }
 
-.bar {
+.hamburger span {
+    display: block;
     width: 25px;
     height: 3px;
-    background: #ffffff;
-    transition: 0.3s;
-    border-radius: 999px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
 }
 
 body.nav-open {
@@ -2570,18 +2572,56 @@ body.nav-open {
 
 /* Media Queries para Responsividad */
 
-/* Dispositivos extra grandes (escritorios grandes, 1200px y más) */
-@media (max-width: 1200px) {
-    .nav-container {
-        padding: 0 1.5rem;
-    }
-    .hero-content {
-        padding: 3rem 1.5rem;
+/* Estilos base para móviles (Mobile First) */
+
+/* Dispositivos pequeños (teléfonos en horizontal, 576px y más) */
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
     }
 }
 
-/* Dispositivos grandes (escritorios, 992px a 1200px) */
-@media (max-width: 992px) {
+/* Dispositivos medianos (tabletas, 768px y más) */
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .nav-menu {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background: transparent;
+        padding: 0;
+        gap: 2rem;
+    }
+
+    .hamburger {
+        display: none !important;
+    }
+
+    .logo-text-container {
+        display: flex;
+    }
+}
+
+/* Dispositivos grandes (escritorios, 992px y más) */
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+/* Dispositivos extra grandes (escritorios grandes, 1200px y más) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* Ajustes específicos para el menú hamburguesa en pantallas pequeñas */
+@media (max-width: 767.98px) {
     .nav-menu {
         display: none;
         flex-direction: column;
@@ -2592,6 +2632,7 @@ body.nav-open {
         background: #0a0a0a;
         padding: 1rem 0;
         gap: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .nav-menu.active {
@@ -2600,24 +2641,45 @@ body.nav-open {
 
     .hamburger {
         display: flex;
+        flex-direction: column;
+        gap: 5px; /* Espacio entre las barras */
     }
 
-    .hero-title {
-        font-size: clamp(2.5rem, 8vw, 3.5rem);
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        border-radius: 3px;
+        transition: all 0.3s ease-in-out;
     }
 
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .logo-text-container {
+        display: none;
+    }
+}
+
+/* Ajustes generales para pantallas más pequeñas */
+@media (max-width: 992px) {
     .hero-stats {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 }
 
-/* Dispositivos medianos (tabletas, 768px a 992px) */
 @media (max-width: 768px) {
-    .logo-text-container {
-        display: none;
-    }
-
     .hero-title {
         font-size: clamp(2rem, 10vw, 3rem);
     }
@@ -2635,9 +2697,24 @@ body.nav-open {
         width: 100%;
         justify-content: center;
     }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .solution-content {
+        flex-direction: column;
+    }
+
+    .projects-grid, .results-grid, .publications-grid, .collaboration-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-content {
+        flex-direction: column;
+    }
 }
 
-/* Dispositivos pequeños (teléfonos, 576px a 768px) */
 @media (max-width: 576px) {
     :root {
         --header-height: 70px;
@@ -2659,7 +2736,7 @@ body.nav-open {
         font-size: 1rem;
     }
 
-    .hero-stats .stat-item {
+    .hero-stats .stat-item, .stats .stat-item {
         padding: 2rem 1.5rem;
     }
 
@@ -2670,4 +2747,14 @@ body.nav-open {
     .stat-label-modern {
         font-size: 0.9rem;
     }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 2rem;
+    }
 }
+
