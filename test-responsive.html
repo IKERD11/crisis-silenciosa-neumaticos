@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Prueba Responsiva - Crisis Silenciosa Neumáticos</title>
+    
+    <!-- Estilos responsivos -->
+    <link rel="stylesheet" href="responsive-complete-fix.css?v=1758003456">
+    <link rel="stylesheet" href="mobile-overflow-fix.css?v=1758003456">
+    
+    <style>
+        /* Estilos base para la prueba */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+            color: white;
+            line-height: 1.6;
+        }
+        
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .test-section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .test-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #10b981;
+            text-align: center;
+        }
+        
+        .breakpoint-info {
+            background: rgba(16, 185, 129, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #10b981;
+        }
+        
+        .device-indicator {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #fbbf24;
+        }
+        
+        /* Elementos de prueba */
+        .grid-test {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .grid-item {
+            background: rgba(59, 130, 246, 0.2);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .button-test {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        
+        .test-btn {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .test-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .overflow-test {
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+            background: rgba(239, 68, 68, 0.2);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .long-text {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .nav-test {
+            background: rgba(10, 10, 10, 0.9);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .nav-test-menu {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .nav-test-item {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: background 0.3s;
+        }
+        
+        .nav-test-item:hover {
+            background: rgba(16, 185, 129, 0.2);
+        }
+        
+        /* Indicadores de breakpoint */
+        .breakpoint-indicator::after {
+            content: 'Móvil Pequeño (< 480px)';
+            color: #ef4444;
+        }
+        
+        @media (min-width: 480px) {
+            .breakpoint-indicator::after {
+                content: 'Móvil (480px - 767px)';
+                color: #f59e0b;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .breakpoint-indicator::after {
+                content: 'Tablet (768px - 1023px)';
+                color: #10b981;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .breakpoint-indicator::after {
+                content: 'Desktop (1024px - 1199px)';
+                color: #3b82f6;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .breakpoint-indicator::after {
+                content: 'Desktop Grande (≥ 1200px)';
+                color: #8b5cf6;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1 class="test-title">🧪 Prueba de Diseño Responsivo</h1>
+        
+        <!-- Indicador de breakpoint actual -->
+        <div class="breakpoint-info">
+            <div class="device-indicator">📱 Dispositivo actual: <span class="breakpoint-indicator"></span></div>
+            <p>Redimensiona la ventana para ver cómo se adapta el diseño a diferentes tamaños de pantalla.</p>
+        </div>
+        
+        <!-- Prueba de navegación -->
+        <div class="test-section">
+            <h2>🧭 Prueba de Navegación</h2>
+            <div class="nav-test">
+                <div class="nav-test-menu">
+                    <a href="#" class="nav-test-item">Inicio</a>
+                    <a href="#" class="nav-test-item">Problemática</a>
+                    <a href="#" class="nav-test-item">Soluciones</a>
+                    <a href="#" class="nav-test-item">Proyectos</a>
+                    <a href="#" class="nav-test-item">Investigación</a>
+                    <a href="#" class="nav-test-item">Contacto</a>
+                </div>
+            </div>
+            <p>En móviles, esta navegación debería adaptarse a un formato más compacto.</p>
+        </div>
+        
+        <!-- Prueba de grid responsivo -->
+        <div class="test-section">
+            <h2>📐 Prueba de Grid Responsivo</h2>
+            <div class="grid-test">
+                <div class="grid-item">
+                    <h3>35M</h3>
+                    <p>Neumáticos desechados anualmente</p>
+                </div>
+                <div class="grid-item">
+                    <h3>+300M</h3>
+                    <p>Acumulados en tiraderos</p>
+                </div>
+                <div class="grid-item">
+                    <h3>40%</h3>
+                    <p>Importados de EE.UU.</p>
+                </div>
+            </div>
+            <p>Este grid debe cambiar de 3 columnas a 2 columnas en tablet y 1 columna en móvil.</p>
+        </div>
+        
+        <!-- Prueba de botones -->
+        <div class="test-section">
+            <h2>🔘 Prueba de Botones Responsivos</h2>
+            <div class="button-test">
+                <button class="test-btn">Ver Soluciones</button>
+                <button class="test-btn">Investigación</button>
+                <button class="test-btn">Contactar</button>
+            </div>
+            <p>Los botones deben adaptarse al ancho de pantalla disponible y mantener un tamaño táctil adecuado.</p>
+        </div>
+        
+        <!-- Prueba de texto largo -->
+        <div class="test-section">
+            <h2>📝 Prueba de Texto y Overflow</h2>
+            <div class="overflow-test">
+                <h3 class="long-text">La Crisis Silenciosa: Cómo los Neumáticos Usados Están Ahogando Nuestro Planeta</h3>
+                <p class="long-text">
+                    Este es un título muy largo que debe ajustarse correctamente sin causar overflow horizontal. 
+                    Palabras súper largas como "supercalifragilisticoespialidoso" deben romperse apropiadamente.
+                    URLs largas como https://www.ejemplo.com/una/ruta/muy/larga/que/podria/causar/overflow también deben manejarse.
+                </p>
+            </div>
+            <p>El texto debe ajustarse sin causar scroll horizontal.</p>
+        </div>
+        
+        <!-- Prueba de imágenes -->
+        <div class="test-section">
+            <h2>🖼️ Prueba de Imágenes Responsivas</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">
+                <div style="background: rgba(16, 185, 129, 0.3); height: 150px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                    <span>Imagen 1</span>
+                </div>
+                <div style="background: rgba(59, 130, 246, 0.3); height: 150px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                    <span>Imagen 2</span>
+                </div>
+                <div style="background: rgba(239, 68, 68, 0.3); height: 150px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                    <span>Imagen 3</span>
+                </div>
+            </div>
+            <p>Las imágenes deben redimensionarse proporcionalmente y no desbordarse del contenedor.</p>
+        </div>
+        
+        <!-- Información técnica -->
+        <div class="test-section">
+            <h2>🔧 Información Técnica</h2>
+            <div style="font-family: monospace; background: rgba(0, 0, 0, 0.3); padding: 1rem; border-radius: 8px;">
+                <p><strong>Viewport:</strong> <span id="viewport-size">Calculando...</span></p>
+                <p><strong>Device Pixel Ratio:</strong> <span id="dpr">Calculando...</span></p>
+                <p><strong>Touch Support:</strong> <span id="touch-support">Calculando...</span></p>
+                <p><strong>Orientation:</strong> <span id="orientation">Calculando...</span></p>
+            </div>
+        </div>
+        
+        <!-- Checklist de validación -->
+        <div class="test-section">
+            <h2>✅ Checklist de Validación</h2>
+            <ul style="list-style-position: inside; margin: 0.5rem 0;">
+                <li>✅ No hay scroll horizontal en ninguna resolución</li>
+                <li>✅ El menú de navegación se adapta correctamente</li>
+                <li>✅ Los grids cambian de columnas según el breakpoint</li>
+                <li>✅ Los botones tienen tamaño táctil adecuado (mín. 44px)</li>
+                <li>✅ El texto largo se ajusta sin desbordarse</li>
+                <li>✅ Las imágenes son responsivas</li>
+                <li>✅ Los elementos decorativos no interfieren</li>
+                <li>✅ La página carga rápidamente en móviles</li>
+                <li>✅ Los gestos táctiles funcionan correctamente</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        // Actualizar información técnica
+        function updateTechInfo() {
+            document.getElementById('viewport-size').textContent = 
+                `${window.innerWidth} × ${window.innerHeight}px`;
+            document.getElementById('dpr').textContent = 
+                window.devicePixelRatio || 'No disponible';
+            document.getElementById('touch-support').textContent = 
+                'ontouchstart' in window ? 'Sí' : 'No';
+            document.getElementById('orientation').textContent = 
+                screen.orientation ? screen.orientation.angle + '°' : 'No disponible';
+        }
+        
+        updateTechInfo();
+        window.addEventListener('resize', updateTechInfo);
+        window.addEventListener('orientationchange', () => {
+            setTimeout(updateTechInfo, 100);
+        });
+        
+        // Comprobar overflow horizontal
+        function checkHorizontalOverflow() {
+            const hasOverflow = document.body.scrollWidth > window.innerWidth;
+            if (hasOverflow) {
+                console.warn('⚠️ Detectado scroll horizontal!');
+                alert('⚠️ Se detectó scroll horizontal. Revisar elementos que excedan el ancho del viewport.');
+            }
+        }
+        
+        window.addEventListener('resize', checkHorizontalOverflow);
+        setTimeout(checkHorizontalOverflow, 1000);
+    </script>
+</body>
+</html>

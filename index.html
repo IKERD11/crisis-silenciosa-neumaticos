@@ -14,6 +14,8 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" as="style">
     
     <link rel="stylesheet" href="styles.css?v=1758003456">
+    <link rel="stylesheet" href="responsive-complete-fix.css?v=1758003456">
+    <link rel="stylesheet" href="mobile-overflow-fix.css?v=1758003456">
     <link rel="stylesheet" href="responsive-fix.css?v=1758003456">
     <link rel="stylesheet" href="mobile-final-fix.css?v=1758001234">
     <link rel="stylesheet" href="mobile-polish.css?v=1758001234">
@@ -62,7 +64,7 @@
                         <span class="logo-subtext">Instituto Tecnológico de Cuautla</span>
                     </div>
                 </div>
-                <ul class="nav-menu">
+                <ul class="nav-menu" id="nav-menu">
                     <li><a href="#inicio" class="nav-link">Inicio</a></li>
                     <li><a href="#problema" class="nav-link">Problemática</a></li>
                     <li><a href="#soluciones" class="nav-link">Soluciones</a></li>
@@ -70,11 +72,11 @@
                     <li><a href="#investigacion" class="nav-link">Investigación</a></li>
                     <li><a href="#contacto" class="nav-link">Contacto</a></li>
                 </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
+                <button class="hamburger" id="hamburger" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </nav>
     </header>
