@@ -40,11 +40,10 @@ body {
     to { opacity: 1; }
 }
 
-/* Asegurar que el contenido sea visible después de 2 segundos */
-@media (max-width: 1px) and (min-width: 0px) {
-    body {
-        opacity: 1 !important;
-    }
+/* Asegurar visibilidad del contenido */
+body {
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 @keyframes fadeInPage {
@@ -3216,19 +3215,28 @@ body::after {
     align-items: stretch;
 }
 
-/* Para pantallas muy grandes, permitir 4 columnas */
-@media (min-width: 1400px) {
+/* Responsive grid para regulatory cards */
+.regulatory-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Para tablets */
+@media (min-width: 768px) {
     .regulatory-cards-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
     }
 }
 
-/* Para pantallas medianas, mantener 2 columnas */
-@media (max-width: 1199px) and (min-width: 769px) {
+/* Para pantallas muy grandes */
+@media (min-width: 1400px) {
     .regulatory-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
     }
 }
 
@@ -4915,15 +4923,32 @@ body::after {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive para colaboraciones */
-@media (max-width: 768px) {
+/* Responsive para colaboraciones - MEJORADO */
+.collaboration-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 768px) {
     .collaboration-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
     }
-    
+}
+
+@media (min-width: 1200px) {
+    .collaboration-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
     .collaboration-item {
-        padding: 2rem;
+        padding: 1.5rem;
     }
     
     .collab-header {
@@ -4933,18 +4958,18 @@ body::after {
     }
     
     .collab-logo {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
     }
     
     .collab-content h4 {
-        font-size: 1.1rem;
+        font-size: 1rem;
         text-align: center;
     }
     
     .collab-content p {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         text-align: center;
     }
 }
@@ -5930,56 +5955,55 @@ body::after {
         padding: 0 1rem;
     }
 
-/* Responsive styles for new stats design */
-@media (max-width: 768px) {
-    .hero-stats {
-        grid-template-columns: 1fr;
+/* Responsive styles para estadísticas - MEJORADO */
+.hero-stats, .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 480px) {
+    .hero-stats, .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-stats, .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
-        margin-bottom: 2rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero-stats, .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-stats .stat-item, .stats .stat-item {
+        min-height: 180px;
+        padding: 1.5rem 1rem;
     }
 
-    .hero-stats .stat-item {
-        min-height: 250px;
-        padding: 2.5rem 1.5rem;
+    .hero-stats .stat-icon-modern, .stat-icon-modern {
+        font-size: 2rem;
     }
 
-    .hero-stats .stat-icon-modern {
-        font-size: 3rem;
+    .hero-stats .stat-number-modern, .stat-number-modern {
+        font-size: 2rem;
     }
 
-    .hero-stats .stat-number-modern {
-        font-size: 3rem;
-    }
-
-    .hero-stats .stat-label-modern {
-        font-size: 0.9rem;
+    .hero-stats .stat-label-modern, .stat-label-modern {
+        font-size: 0.8rem;
     }
 
     .stats .section-title {
-        font-size: 2.5rem;
-    }
-
-    .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .stats .stat-item {
-        min-height: 250px;
-        padding: 2.5rem 1.5rem;
-    }
-
-    .stat-icon-modern {
-        font-size: 3rem;
-    }
-
-    .stat-number-modern {
-        font-size: 3rem;
-    }
-
-    .hero-stats .stat-item:hover,
-    .stats .stat-item:hover {
-        transform: translateY(-5px) scale(1.01);
+        font-size: 2rem;
     }
 }
 
