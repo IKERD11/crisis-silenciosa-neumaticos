@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Imágenes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .image-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .image-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .image-card h3 {
+            margin: 15px 0 5px 0;
+            color: #333;
+        }
+        .image-card p {
+            color: #666;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .status {
+            display: inline-block;
+            padding: 5px 10px;
+            background: #10b981;
+            color: white;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+        .error {
+            background: #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Test de Carga de Imágenes</h1>
+        <p>Verificando que las imágenes se cargan correctamente:</p>
+        
+        <div class="image-grid">
+            <div class="image-card">
+                <img src="assets/images/Mesa.png" 
+                     alt="Mesa con neumáticos reciclados"
+                     onload="this.nextElementSibling.textContent = '✅ Imagen cargada correctamente'"
+                     onerror="this.nextElementSibling.textContent = '❌ Error al cargar imagen'; this.nextElementSibling.classList.add('error')">
+                <h3>Mesa de Neumáticos</h3>
+                <p>Ruta: assets/images/Mesa.png</p>
+                <div class="status">Verificando...</div>
+            </div>
+            
+            <div class="image-card">
+                <img src="assets/images/Jardinera.png" 
+                     alt="Jardinera con neumáticos reciclados"
+                     onload="this.nextElementSibling.textContent = '✅ Imagen cargada correctamente'"
+                     onerror="this.nextElementSibling.textContent = '❌ Error al cargar imagen'; this.nextElementSibling.classList.add('error')">
+                <h3>Jardinera de Neumáticos</h3>
+                <p>Ruta: assets/images/Jardinera.png</p>
+                <div class="status">Verificando...</div>
+            </div>
+            
+            <div class="image-card">
+                <img src="assets/images/Bancos.jpg" 
+                     alt="Bancos con neumáticos reciclados"
+                     onload="this.nextElementSibling.textContent = '✅ Imagen cargada correctamente'"
+                     onerror="this.nextElementSibling.textContent = '❌ Error al cargar imagen'; this.nextElementSibling.classList.add('error')">
+                <h3>Bancos de Neumáticos</h3>
+                <p>Ruta: assets/images/Bancos.jpg</p>
+                <div class="status">Verificando...</div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px; padding: 20px; background: white; border-radius: 8px;">
+            <h2>Instrucciones:</h2>
+            <ol>
+                <li>Abre este archivo en tu navegador</li>
+                <li>Verifica que las 3 imágenes se muestren correctamente</li>
+                <li>Debajo de cada imagen debe aparecer "✅ Imagen cargada correctamente"</li>
+                <li>Si alguna muestra "❌", verifica la ruta del archivo</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

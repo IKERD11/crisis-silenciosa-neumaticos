@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Hero Image</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .image-test {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            display: block;
+        }
+        .info {
+            padding: 10px;
+            background: #e3f2fd;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🔍 Test de Imagen Hero</h1>
+        <div class="info">
+            <p><strong>Ruta:</strong> assets/images/image-1760671510405.png</p>
+        </div>
+        
+        <h2>Prueba de carga:</h2>
+        <img 
+            src="assets/images/image-1760671510405.png" 
+            alt="Neumáticos apilados" 
+            class="image-test"
+            onload="document.getElementById('status').innerHTML = '✅ Imagen cargada correctamente'; document.getElementById('status').className = 'info success';"
+            onerror="document.getElementById('status').innerHTML = '❌ Error: No se pudo cargar la imagen'; document.getElementById('status').className = 'info error';">
+        
+        <div id="status" class="info">⏳ Cargando imagen...</div>
+        
+        <h3>Instrucciones:</h3>
+        <ul>
+            <li>Si ves la imagen arriba, está funcionando correctamente</li>
+            <li>Si aparece el icono roto 🖼️, hay un problema con la ruta o el archivo</li>
+            <li>Presiona Ctrl+Shift+R para forzar recarga sin caché</li>
+        </ul>
+    </div>
+</body>
+</html>

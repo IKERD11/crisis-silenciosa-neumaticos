@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación Visual de Imágenes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .warning {
+            background: #fbbf24;
+            color: #78350f;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .image-box {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        .image-box:hover {
+            transform: translateY(-5px);
+        }
+        .image-box h2 {
+            color: #1f2937;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            border-bottom: 3px solid #10b981;
+            padding-bottom: 10px;
+        }
+        .image-box img {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            background: #f9fafb;
+            border-radius: 10px;
+            border: 3px solid #e5e7eb;
+        }
+        .info {
+            margin-top: 15px;
+            padding: 15px;
+            background: #eff6ff;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+        .info p {
+            margin: 5px 0;
+            color: #1e40af;
+            font-size: 0.95rem;
+        }
+        .info strong {
+            color: #1e3a8a;
+        }
+        .status {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        .status.success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .status.error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        .instructions {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .instructions h2 {
+            color: #1f2937;
+            margin-bottom: 20px;
+        }
+        .instructions ol {
+            margin-left: 20px;
+        }
+        .instructions li {
+            margin: 10px 0;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+        .btn-reload {
+            display: block;
+            margin: 20px auto;
+            padding: 15px 40px;
+            background: #10b981;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-reload:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Verificación Visual de Imágenes</h1>
+        
+        <div class="warning">
+            ⚠️ Si las imágenes abajo NO coinciden con la descripción, hay un problema de caché o rutas
+        </div>
+
+        <button class="btn-reload" onclick="location.reload(true)">🔄 Forzar Recarga Completa</button>
+
+        <div class="image-container">
+            <div class="image-box">
+                <h2>1️⃣ Mesa de Neumáticos</h2>
+                <img src="assets/images/Mesa.png?nocache=<?php echo time(); ?>" 
+                     alt="Mesa de Neumáticos"
+                     onload="document.getElementById('status-mesa').className='status success'; document.getElementById('status-mesa').textContent='✅ Cargada correctamente'"
+                     onerror="document.getElementById('status-mesa').className='status error'; document.getElementById('status-mesa').textContent='❌ Error al cargar'">
+                <div class="info">
+                    <p><strong>Archivo:</strong> Mesa.png</p>
+                    <p><strong>Debe mostrar:</strong> Mesa con neumáticos apilados y tapa de madera circular</p>
+                    <p><strong>Características:</strong> Neumáticos negros apilados, tapa de madera con vetas naturales</p>
+                    <span id="status-mesa" class="status">Cargando...</span>
+                </div>
+            </div>
+
+            <div class="image-box">
+                <h2>2️⃣ Jardinera de Neumáticos</h2>
+                <img src="assets/images/Jardinera.png?nocache=<?php echo time(); ?>" 
+                     alt="Jardinera de Neumáticos"
+                     onload="document.getElementById('status-jardinera').className='status success'; document.getElementById('status-jardinera').textContent='✅ Cargada correctamente'"
+                     onerror="document.getElementById('status-jardinera').className='status error'; document.getElementById('status-jardinera').textContent='❌ Error al cargar'">
+                <div class="info">
+                    <p><strong>Archivo:</strong> Jardinera.png</p>
+                    <p><strong>Debe mostrar:</strong> Neumáticos coloridos (amarillo, verde, rojo, azul) con flores</p>
+                    <p><strong>Características:</strong> Neumáticos pintados apilados, llenos de flores de colores</p>
+                    <span id="status-jardinera" class="status">Cargando...</span>
+                </div>
+            </div>
+
+            <div class="image-box">
+                <h2>3️⃣ Bancos de Neumáticos</h2>
+                <img src="assets/images/Bancos.jpg?nocache=<?php echo time(); ?>" 
+                     alt="Bancos de Neumáticos"
+                     onload="document.getElementById('status-bancos').className='status success'; document.getElementById('status-bancos').textContent='✅ Cargada correctamente'"
+                     onerror="document.getElementById('status-bancos').className='status error'; document.getElementById('status-bancos').textContent='❌ Error al cargar'">
+                <div class="info">
+                    <p><strong>Archivo:</strong> Bancos.jpg</p>
+                    <p><strong>Debe mostrar:</strong> Sillas y bancos con neumáticos negros y asientos tejidos naranjas</p>
+                    <p><strong>Características:</strong> Neumáticos negros, respaldos y asientos con tejido naranja/marrón</p>
+                    <span id="status-bancos" class="status">Cargando...</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>📋 Instrucciones de Verificación</h2>
+            <ol>
+                <li><strong>Revisa cada imagen arriba</strong> - Debe coincidir con la descripción exacta</li>
+                <li><strong>Si NO coinciden:</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>Presiona el botón "🔄 Forzar Recarga Completa" arriba</li>
+                        <li>O presiona <code>Ctrl + Shift + R</code> (Windows) / <code>Cmd + Shift + R</code> (Mac)</li>
+                        <li>O abre esta página en modo incógnito</li>
+                    </ul>
+                </li>
+                <li><strong>Si aún no funciona:</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>Abre DevTools (F12)</li>
+                        <li>Ve a la pestaña "Application" → "Storage" → "Clear site data"</li>
+                        <li>Recarga la página</li>
+                    </ul>
+                </li>
+                <li><strong>Una vez verificado:</strong> Cierra esta página y recarga <code>index.html</code> con <code>Ctrl + F5</code></li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // Añadir timestamp único a cada imagen para evitar caché
+        window.addEventListener('load', function() {
+            const timestamp = new Date().getTime();
+            const images = document.querySelectorAll('.image-box img');
+            images.forEach(img => {
+                const currentSrc = img.src.split('?')[0];
+                img.src = currentSrc + '?t=' + timestamp;
+            });
+        });
+
+        // Log para debugging
+        console.log('🔍 Página de verificación cargada');
+        console.log('Timestamp:', new Date().getTime());
+    </script>
+</body>
+</html>

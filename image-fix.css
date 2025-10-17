@@ -1,0 +1,63 @@
+/* Fix para visualización correcta de imágenes */
+
+/* Asegurar que las imágenes se carguen correctamente */
+.development-image {
+    background: #f8f9fa !important;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.development-image img {
+    display: block !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: auto;
+    object-fit: cover !important;
+    object-position: center !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Evitar problemas de carga de imagen */
+.development-card img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Placeholder mientras carga la imagen */
+.development-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #e5e7eb 0%, #f3f4f6 100%);
+    z-index: -1;
+}
+
+/* Asegurar visibilidad en hover */
+.development-card:hover .development-image img {
+    opacity: 1 !important;
+    transform: scale(1.05);
+}
+
+/* Forzar recarga de imágenes deshabilitando caché */
+.development-image img[src] {
+    image-rendering: auto;
+}
+
+/* Responsive: ajustar altura en móviles */
+@media (max-width: 768px) {
+    .development-image {
+        height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .development-image {
+        height: 200px;
+    }
+}
