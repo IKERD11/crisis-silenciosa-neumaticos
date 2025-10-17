@@ -303,10 +303,26 @@ document.addEventListener('DOMContentLoaded', function() {
     if (heroImage) {
         window.addEventListener('scroll', function() {
             const scrolled = window.scrollY;
-            const rate = scrolled * 0.3;
             
-            if (scrolled < window.innerHeight) {
-                heroImage.style.transform = `translateY(${rate}px)`;
+            // Ajustar la tasa de desplazamiento según el tamaño de pantalla
+            let rate;
+            if (window.innerWidth <= 640) {
+                rate = scrolled * 0.08; // Móviles: efecto muy sutil
+            } else if (window.innerWidth <= 968) {
+                rate = scrolled * 0.12; // Tablets: efecto moderado
+            } else {
+                rate = scrolled * 0.15; // Desktop: efecto suave
+            }
+            
+            // Limitar el desplazamiento máximo para evitar que se salga del contenedor
+            const maxScroll = window.innerHeight * 0.8;
+            const maxDisplacement = window.innerWidth <= 640 ? 30 : 50;
+            
+            if (scrolled < maxScroll) {
+                const displacement = Math.min(rate, maxDisplacement);
+                heroImage.style.transform = `translateY(${displacement}px)`;
+            } else {
+                heroImage.style.transform = `translateY(${maxDisplacement}px)`;
             }
         });
     }

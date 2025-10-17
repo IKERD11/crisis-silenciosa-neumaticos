@@ -436,6 +436,10 @@ button {
 .hero-image {
     position: relative;
     animation: fadeInRight 1s ease-out 0.3s both;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @keyframes fadeInRight {
@@ -461,12 +465,16 @@ button {
 .floating-image {
     border-radius: 20px;
     box-shadow: var(--shadow-xl);
-    animation: floatImage 6s ease-in-out infinite;
+    animation: floatImage 8s ease-in-out infinite;
+    will-change: transform;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 @keyframes floatImage {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+    50% { transform: translateY(-10px); }
 }
 
 .scroll-indicator {
@@ -1377,6 +1385,12 @@ button {
         height: 40px;
     }
     
+    /* Reducir animación de imagen flotante en tablets */
+    @keyframes floatImage {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+    }
+    
     .nav-menu {
         position: fixed;
         top: 80px;
@@ -1418,6 +1432,13 @@ button {
         order: -1;
         max-width: 400px;
         margin: 0 auto;
+        padding: 0 1rem;
+    }
+    
+    /* Ajustar la imagen para que no se desborde */
+    .floating-image {
+        max-width: 100%;
+        height: auto;
     }
     
     .hero-stats-row {
@@ -1459,6 +1480,16 @@ button {
     
     .nav-brand {
         gap: 8px;
+    }
+    
+    /* Animación mínima en móviles para mejor rendimiento */
+    .floating-image {
+        animation: floatImage 10s ease-in-out infinite;
+    }
+    
+    @keyframes floatImage {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
     }
     
     .hero-buttons {
