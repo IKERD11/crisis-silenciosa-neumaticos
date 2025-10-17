@@ -848,6 +848,172 @@ button {
     font-weight: 500;
 }
 
+/* ===== DEVELOPMENT SECTION ===== */
+.development-section {
+    padding: var(--section-padding);
+    background: var(--bg-secondary);
+}
+
+.development-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.development-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.development-card:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-10px);
+}
+
+.development-image {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--gray-200) 0%, var(--gray-300) 100%);
+}
+
+.development-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.development-card:hover .development-image img {
+    transform: scale(1.15);
+}
+
+.development-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.development-card:hover .development-overlay {
+    opacity: 1;
+}
+
+.overlay-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-weight: 600;
+}
+
+.overlay-content i {
+    font-size: 2.5rem;
+    transform: scale(0.8);
+    transition: var(--transition);
+}
+
+.development-card:hover .overlay-content i {
+    transform: scale(1);
+}
+
+.development-content {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.development-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.development-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.development-status {
+    padding: 6px 16px;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
+    color: var(--primary-dark);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1.5px solid var(--primary-light);
+}
+
+.development-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 1rem;
+    font-family: var(--font-display);
+}
+
+.development-desc {
+    color: var(--gray-600);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.development-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin-top: auto;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: var(--gray-50);
+    border-radius: 12px;
+    transition: var(--transition-fast);
+}
+
+.feature-item:hover {
+    background: rgba(16, 185, 129, 0.05);
+    transform: translateX(3px);
+}
+
+.feature-item i {
+    color: var(--primary);
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.feature-item span {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gray-700);
+}
+
 /* ===== CTA SECTION ===== */
 .cta-section {
     padding: var(--section-padding);
@@ -1157,6 +1323,13 @@ button {
 }
 
 /* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .development-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+}
+
 @media (max-width: 968px) {
     :root {
         --section-padding: 60px 0;
@@ -1242,7 +1415,20 @@ button {
     .stats-grid,
     .solutions-grid,
     .projects-grid,
+    .development-grid,
     .impact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .development-grid {
+        gap: 1.5rem;
+    }
+    
+    .development-image {
+        height: 240px;
+    }
+    
+    .development-features {
         grid-template-columns: 1fr;
     }
     
