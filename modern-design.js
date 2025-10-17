@@ -51,7 +51,20 @@ document.addEventListener('DOMContentLoaded', function() {
             const target = document.querySelector(href);
             
             if (target) {
-                const offsetTop = target.offsetTop - 80;
+                // Calcular offset dinámicamente basado en el navbar actual y el ancho de pantalla
+                const navbarHeight = navbar.offsetHeight;
+                let extraOffset = 0;
+                
+                // Ajustar offset según el tamaño de pantalla para mantener mejor visibilidad
+                if (window.innerWidth <= 640) {
+                    extraOffset = 10; // Móviles pequeños
+                } else if (window.innerWidth <= 968) {
+                    extraOffset = 15; // Tablets
+                } else {
+                    extraOffset = 20; // Desktop
+                }
+                
+                const offsetTop = target.offsetTop - navbarHeight - extraOffset;
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -63,7 +76,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===== UPDATE ACTIVE NAV LINK =====
     function updateActiveNavLink() {
         const sections = document.querySelectorAll('section[id]');
-        const scrollPosition = window.scrollY + 150;
+        // Calcular offset dinámicamente para mejor detección de secciones activas
+        const navbarHeight = navbar.offsetHeight;
+        const buffer = window.innerWidth <= 640 ? 100 : 120;
+        const scrollPosition = window.scrollY + navbarHeight + buffer;
         
         sections.forEach(section => {
             const sectionTop = section.offsetTop;

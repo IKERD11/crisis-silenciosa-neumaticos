@@ -66,6 +66,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    scroll-padding-top: 100px; /* Espacio para el navbar fijo */
 }
 
 body {
@@ -155,18 +156,21 @@ button {
 .nav-brand-text {
     display: flex;
     flex-direction: column;
+    line-height: 1.2;
 }
 
 .brand-title {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--gray-900);
     font-family: var(--font-display);
+    white-space: nowrap;
 }
 
 .brand-subtitle {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: var(--gray-600);
+    white-space: nowrap;
 }
 
 .nav-menu {
@@ -1327,7 +1331,25 @@ button {
 }
 
 /* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+    .brand-title {
+        font-size: 0.9rem;
+    }
+    
+    .brand-subtitle {
+        font-size: 0.65rem;
+    }
+}
+
 @media (max-width: 1024px) {
+    .brand-title {
+        font-size: 0.85rem;
+    }
+    
+    .brand-subtitle {
+        font-size: 0.6rem;
+    }
+    
     .development-grid {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 2rem;
@@ -1337,6 +1359,22 @@ button {
 @media (max-width: 968px) {
     :root {
         --section-padding: 60px 0;
+    }
+    
+    html {
+        scroll-padding-top: 90px;
+    }
+    
+    .brand-title {
+        font-size: 0.75rem;
+    }
+    
+    .brand-subtitle {
+        font-size: 0.55rem;
+    }
+    
+    .nav-logo {
+        height: 40px;
     }
     
     .nav-menu {
@@ -1403,8 +1441,24 @@ button {
 }
 
 @media (max-width: 640px) {
+    html {
+        scroll-padding-top: 80px;
+    }
+    
+    .brand-title {
+        font-size: 0.7rem;
+    }
+    
     .brand-subtitle {
         display: none;
+    }
+    
+    .nav-logo {
+        height: 35px;
+    }
+    
+    .nav-brand {
+        gap: 8px;
     }
     
     .hero-buttons {
@@ -1445,5 +1499,41 @@ button {
         height: 45px;
         bottom: 20px;
         right: 20px;
+    }
+}
+
+/* Media query adicional para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    html {
+        scroll-padding-top: 75px;
+    }
+    
+    .brand-title {
+        font-size: 0.65rem;
+    }
+    
+    .nav-logo {
+        height: 32px;
+    }
+    
+    .nav-brand {
+        gap: 6px;
+    }
+}
+
+@media (max-width: 360px) {
+    html {
+        scroll-padding-top: 70px;
+    }
+    
+    .brand-title {
+        font-size: 0.6rem;
+        max-width: 180px;
+        white-space: normal;
+        line-height: 1.1;
+    }
+    
+    .nav-logo {
+        height: 30px;
     }
 }
