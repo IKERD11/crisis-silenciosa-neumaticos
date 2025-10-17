@@ -1,0 +1,30 @@
+/* Forzar visualización de todo el contenido */
+html {
+    display: block !important;
+}
+
+body {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Asegurar que todas las secciones principales sean visibles */
+.header, .hero, .problem-section, .solutions-section, 
+.projects-section, .research-section, .contact-section, .footer {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Asegurar que todo el contenido dentro sea visible */
+.hero-content, .hero-main, .hero-title, .title-word,
+.nav-container, .nav-logo, .nav-menu, .section-content {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Resetear cualquier transformación que oculte contenido */
+section, article, div, header, footer, nav {
+    transform: none !important;
+}

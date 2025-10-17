@@ -8,6 +8,12 @@
     display: none !important;
 }
 
+/* Asegurar visibilidad completa del sitio */
+html, body, * {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
 * {
     margin: 0;
     padding: 0;
