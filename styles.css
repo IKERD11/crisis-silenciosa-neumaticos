@@ -8,55 +8,6 @@
     display: none !important;
 }
 
-/* Loading inicial para mejorar percepción */
-body {
-    /* Remover opacity inicial para solucionar problema de visibilidad */
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-body.loaded {
-    opacity: 1;
-    animation: fadeInPage 0.5s ease-in-out;
-}
-
-/* Forzar visibilidad de elementos críticos */
-.hero, .hero-content, .hero-main, .hero-title, .title-word {
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-/* Fallback para navegadores sin JavaScript */
-body:not(.loaded) {
-    opacity: 1 !important;
-}
-
-/* Forzar visibilidad después de carga */
-body {
-    animation: forceVisibility 1s linear 1s forwards;
-}
-
-@keyframes forceVisibility {
-    to { opacity: 1; }
-}
-
-/* Asegurar visibilidad del contenido */
-body {
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-@keyframes fadeInPage {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 * {
     margin: 0;
     padding: 0;
