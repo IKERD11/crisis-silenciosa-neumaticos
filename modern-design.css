@@ -106,7 +106,7 @@ button {
 .container {
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
 }
 
 .gradient-text {
@@ -1372,6 +1372,10 @@ button {
         scroll-padding-top: 90px;
     }
     
+    .container {
+        padding: 0 30px;
+    }
+    
     .brand-title {
         font-size: 0.75rem;
     }
@@ -1452,6 +1456,10 @@ button {
         scroll-padding-top: 80px;
     }
     
+    .container {
+        padding: 0 24px;
+    }
+    
     .brand-title {
         font-size: 0.7rem;
     }
@@ -1515,6 +1523,10 @@ button {
         scroll-padding-top: 75px;
     }
     
+    .container {
+        padding: 0 20px;
+    }
+    
     .brand-title {
         font-size: 0.65rem;
     }
@@ -1531,6 +1543,10 @@ button {
 @media (max-width: 360px) {
     html {
         scroll-padding-top: 70px;
+    }
+    
+    .container {
+        padding: 0 16px;
     }
     
     .brand-title {
