@@ -602,7 +602,7 @@ button {
 
 .impact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
@@ -641,6 +641,8 @@ button {
 .impact-icon.blue { background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%); }
 .impact-icon.yellow { background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); }
 .impact-icon.purple { background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%); }
+.impact-icon.green { background: linear-gradient(135deg, #34d399 0%, #10b981 100%); }
+.impact-icon.orange { background: linear-gradient(135deg, #fb923c 0%, #f97316 100%); }
 
 .impact-header h3 {
     font-size: 1.25rem;
@@ -1353,6 +1355,11 @@ button {
     .development-grid {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 2rem;
+    }
+    
+    .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 }
 
