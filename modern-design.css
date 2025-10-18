@@ -512,6 +512,7 @@ button {
     text-align: center;
     max-width: 700px;
     margin: 0 auto 4rem;
+    padding: 0 1rem;
 }
 
 .section-badge {
@@ -1376,6 +1377,11 @@ button {
         padding: 0 30px;
     }
     
+    .section-header {
+        padding: 0 0.5rem;
+        margin-bottom: 3rem;
+    }
+    
     .brand-title {
         font-size: 0.75rem;
     }
@@ -1460,6 +1466,16 @@ button {
         padding: 0 24px;
     }
     
+    .section-header {
+        padding: 0;
+        margin-bottom: 2.5rem;
+    }
+    
+    .section-badge {
+        font-size: 0.8rem;
+        padding: 5px 14px;
+    }
+    
     .brand-title {
         font-size: 0.7rem;
     }
@@ -1525,6 +1541,18 @@ button {
     
     .container {
         padding: 0 20px;
+    }
+    
+    .section-header {
+        margin-bottom: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .section-description {
+        font-size: 1rem;
     }
     
     .brand-title {
