@@ -551,6 +551,7 @@ button {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-bottom: 4rem;
+    padding: 0 0.5rem;
 }
 
 .stat-card {
@@ -605,6 +606,7 @@ button {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    padding: 0 0.5rem;
 }
 
 .impact-card {
@@ -666,6 +668,7 @@ button {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
+    padding: 0 0.5rem;
 }
 
 .solution-card {
@@ -765,6 +768,7 @@ button {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
+    padding: 0 0.5rem;
 }
 
 .project-card {
@@ -866,6 +870,7 @@ button {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2.5rem;
     margin-top: 3rem;
+    padding: 0 0.5rem;
 }
 
 .development-card {
@@ -1507,6 +1512,7 @@ button {
     .development-grid,
     .impact-grid {
         grid-template-columns: 1fr;
+        padding: 0;
     }
     
     .development-grid {
